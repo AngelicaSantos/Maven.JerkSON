@@ -2,6 +2,7 @@ package io.zipcoder.itemparser;
 
 import io.zipcoder.utils.Item;
 import io.zipcoder.ItemParser;
+import io.zipcoder.utils.ItemParseException;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -25,7 +26,12 @@ public class ParseBrokenItemListTest {
                 new Item("bread", 1.23, "food", "2/25/2016"));
 
         // when
-        List<Item> actualList = itemParser.parseItemList(valueToParse);
+        List<Item> actualList = null;
+        try {
+            actualList = itemParser.parseItemList(valueToParse);
+        } catch (ItemParseException e) {
+            e.printStackTrace();
+        }
 
         // then
         assertEquals(expectedList, actualList);
@@ -49,7 +55,12 @@ public class ParseBrokenItemListTest {
                 new Item("bacon", 1.25, "food", "2/25/2016"));
 
         // when
-        List<Item> actualList = itemParser.parseItemList(valueToParse);
+        List<Item> actualList = null;
+        try {
+            actualList = itemParser.parseItemList(valueToParse);
+        } catch (ItemParseException e) {
+            e.printStackTrace();
+        }
 
         // then
         assertEquals(expectedList, actualList);
@@ -73,7 +84,12 @@ public class ParseBrokenItemListTest {
                 new Item("bacon", 1.25, "food", "2/25/2016"));
 
         // when
-        List<Item> actualList = itemParser.parseItemList(valueToParse);
+        List<Item> actualList = null;
+        try {
+            actualList = itemParser.parseItemList(valueToParse);
+        } catch (ItemParseException e) {
+            e.printStackTrace();
+        }
 
         // then
         assertEquals(expectedList, actualList);
